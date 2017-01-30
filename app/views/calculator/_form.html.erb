@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <%= form_tag({controller: "calculator", action: "calculate"}, method: "get", class: "calc_form") do %>
+    <%= form_tag({controller: "calculator", action: "profit"}, method: "get", class: "calc_form") do %>
       <div class="form-group">
         <%= label_tag(:revenue, "Revenue:") %>
         <%= number_field_tag(:revenue, nil, class: "form-control") %>

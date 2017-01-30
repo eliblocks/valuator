@@ -11,6 +11,13 @@
   <body>
     <div class="container">
       <%= yield %>
+      <% if Rails.env == "development" %>
+        <div class="row">
+          <div class="col-md-12">
+            <%= params %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>
