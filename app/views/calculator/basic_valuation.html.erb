@@ -1,3 +1,13 @@
 <%= render 'header' %>
-<%= render 'valuation_form' %>
-<%= @pv_plan %>
+<div class="row">
+  <%= render 'valuation_form' %>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-block">
+        <div class="card-title">
+          <h6>App Valuation:</h6>
+        </div>
+        <%= number_to_currency(@pv_plan) %>
+    </div>
+  </div>
+</div>

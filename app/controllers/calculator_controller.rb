@@ -14,10 +14,10 @@ class CalculatorController < ApplicationController
 
   def basic_valuation
     @baseline_users = params[:baseline_users].to_i
-    @pre_ad_growth = params[:pre_ad_growth].to_f
+    @pre_ad_growth = params[:pre_ad_growth].to_f/100
     @pre_ad_years = params[:pre_ad_years].to_i
     @arpu = params[:arpu].to_i
-    @discount_rate = params[:discount_rate].to_f
+    @discount_rate = params[:discount_rate].to_f/100
     @plan_length = params[:plan_length].to_i
     @pv_plan = pv_plan.round(0)
   end

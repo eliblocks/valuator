@@ -1,23 +1,32 @@
-<div class="row">
-  <div class="col-md-4">
-    <%= form_tag({controller: "calculator", action: "basic_valuation"}, method: "get", class: "calc_form") do %>
-      <div class="form-group">
-        <%= label_tag(:baseline_users, "Baseline users:") %>
-        <%= number_field_tag(:baseline_users, nil, class: "form-control") %>
-        <%= label_tag(:pre_ad_growth, "Pre ad growth") %>
-        <%= number_field_tag(:pre_ad_growth, nil, class: "form-control", step: 0.1) %>
-        <%= label_tag(:pre_ad_years, "Pre ad years") %>
-        <%= number_field_tag(:pre_ad_years, nil, class: "form-control") %>
-        <%= label_tag(:arpu, "Advertising revenue per user:") %>
-        <%= number_field_tag(:arpu, nil, class: "form-control") %>
-        <%= label_tag(:plan_length, "Plan length:") %>
-        <%= number_field_tag(:plan_length, nil, class: "form-control") %>
-        <%= label_tag(:discount_rate, "Discount rate:") %>
-        <%= number_field_tag(:discount_rate, nil, class: "form-control", step: 0.1) %>
+
+<div class="col-sm-5">
+  <%= form_tag({controller: "calculator", action: "basic_valuation"}, method: "get", class: "calc_form") do %>
+    <div class="form-group">
+      <%= label_tag(:plan_length, "App Lifetime:") %>
+      <%= number_field_tag(:plan_length, nil, class: "form-control col-4") %><br>
+      <%= label_tag(:baseline_users, "Baseline users:") %>
+      <%= number_field_tag(:baseline_users, nil, class: "form-control col-4") %><br>
+      <%= label_tag(:pre_ad_growth, "User growth:") %>
+      <div class="input-group">
+        <%= number_field_tag(:pre_ad_growth, nil, class: "form-control col-3") %>
+        <span class="input-group-addon">%</span>
+      </div><br>
+      <%= label_tag(:pre_ad_years, "Years without ads:") %>
+      <%= number_field_tag(:pre_ad_years, nil, class: "form-control col-4") %><br>
+      <%= label_tag(:arpu, "Revenue per user:") %>
+      <div class="input-group">
+        <%= number_field_tag(:arpu, nil, class: "form-control col-3") %>
+        <span class="input-group-addon">$</span>
+      </div><br>
+      <%= label_tag(:discount_rate, "Discount rate:") %>
+      <div class="input-group">
+        <%= number_field_tag(:discount_rate, nil, class: "form-control col-3") %>
+        <span class="input-group-addon">%</span>
       </div>
-      <%= submit_tag("Go!", class: "btn btn-primary") %>
-    <% end %>
-  </div>
+    </div>
+    <%= submit_tag("Go!", class: "btn btn-primary") %>
+  <% end %>
 </div>
+
 
 
